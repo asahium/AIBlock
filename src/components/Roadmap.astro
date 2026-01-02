@@ -103,7 +103,11 @@ const phases = [
   .timeline-item {
     position: relative;
     display: flex;
-    margin-bottom: var(--space-3xl);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
   }
   
   .timeline-item:nth-child(odd) {
