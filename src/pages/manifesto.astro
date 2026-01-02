@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Manifesto — Human-Only Filter">
+  <Navigation />
+  
+  <main class="page">
+    <div class="container">
+      <article class="manifesto">
+        <div class="page-header">
+          <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+          </a>
+          <span class="badge">Our Manifesto</span>
+          <h1>Why We're Building This</h1>
+          <p class="page-meta mono">Last updated: January 2026</p>
+        </div>
+        
+        <div class="manifesto-content">
+          <p class="lead">
+            Look, we're not going to sugarcoat this. The internet is broken, and it's getting worse every day.
+          </p>
+          
+          <p>
+            We started building Human-Only because we got tired. Tired of scrolling through feeds full of content that felt... off. Tired of reading articles that all sounded the same. Tired of not knowing if we were talking to a real person or a sophisticated chatbot pretending to care about our problems.
+          </p>
+          
+          <p>
+            Here's the thing: AI isn't inherently bad. We're not luddites screaming at clouds. Some of us actually work with these models daily. We understand the technology. That's exactly why we're worried.
+          </p>
+          
+          <h2>The Problem Nobody Wants to Talk About</h2>
+          
+          <p>
+            By the time you're reading this, somewhere between 60-90% of the content on the internet is machine-generated. Not human-edited AI drafts. Not AI-assisted writing. Pure, unfiltered synthetic slop designed to game algorithms, fill SEO gaps, and extract attention from your finite human hours.
+          </p>
+          
+          <p>
+            And it's not just text. It's profile pictures. It's product reviews. It's the comments on your favorite YouTuber's videos. It's the "person" who responded to your support ticket. It's everywhere, and most people don't even notice anymore.
+          </p>
+          
+          <p>
+            We noticed. And once you start noticing, you can't stop.
+          </p>
+          
+          <h2>What We Actually Believe</h2>
+          
+          <p>
+            <strong>Human connection matters.</strong> There's something irreplaceable about knowing the words you're reading came from a person who thought about them, struggled with them, maybe even changed their mind while writing them. That's not nostalgia talking — it's basic humanity.
+          </p>
+          
+          <p>
+            <strong>Authenticity shouldn't be a luxury.</strong> You shouldn't need a premium subscription to know if something is real. But that's where we're heading unless someone builds the tools to fight back.
+          </p>
+          
+          <p>
+            <strong>Detection is just the start.</strong> We're not naive enough to think we can win an arms race against trillion-dollar AI companies. That's why we're building something bigger: a reputation system, a web of trust, a community that values signal over noise.
+          </p>
+          
+          <p>
+            <strong>Imperfection is a feature.</strong> The typos, the weird metaphors, the run-on sentences, the opinions that make you say "wait, what?" — these are the fingerprints of human thought. We're not trying to filter them out. We're trying to find them.
+          </p>
+          
+          <h2>What We're Not</h2>
+          
+          <p>
+            We're not building a censorship tool. We don't care about your politics. We're not here to decide what's "good" content or "bad" content. We're just trying to answer one question: did a human being actually write this?
+          </p>
+          
+          <p>
+            We're not anti-AI either. Use ChatGPT to brainstorm. Use Midjourney to prototype designs. Use whatever tools make you more creative, more productive, more yourself. Just... label it. Be honest about it. That's all we ask.
+          </p>
+          
+          <h2>The Future We Want</h2>
+          
+          <p>
+            Imagine an internet where you know what's real. Where "verified human" isn't a badge you buy, but a reputation you earn. Where communities can self-organize around authenticity. Where your attention isn't hijacked by synthetic content farms.
+          </p>
+          
+          <p>
+            That's what we're building. It won't be easy. The bots will adapt. The detection will need to evolve. There will be false positives and missed catches and endless edge cases.
+          </p>
+          
+          <p>
+            But we'd rather try and fail than watch the internet become a ghost town pretending to be alive.
+          </p>
+          
+          <div class="manifesto-signature">
+            <p>— The Human-Only Team</p>
+            <p class="mono">Danila, Anton & Roman</p>
+            <p class="mono">Somewhere with too much coffee</p>
+          </div>
+          
+          <div class="manifesto-cta">
+            <p>If this resonates with you, we'd love to have you along for the ride.</p>
+            <a href="/#waitlist" class="btn btn-primary">Join the Waitlist</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .page {
+    padding: calc(var(--space-5xl) + 60px) 0 var(--space-4xl);
+    min-height: 100vh;
+  }
+  
+  .manifesto {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .page-header {
+    margin-bottom: var(--space-3xl);
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-lg);
+    transition: color var(--transition-fast);
+  }
+  
+  .back-link:hover {
+    color: var(--color-primary);
+  }
+  
+  .page-header .badge {
+    margin-bottom: var(--space-md);
+  }
+  
+  .page-header h1 {
+    margin-bottom: var(--space-md);
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .page-meta {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+  }
+  
+  .manifesto-content {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  
+  .manifesto-content p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-muted);
+  }
+  
+  .manifesto-content .lead {
+    font-size: 1.25rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-text);
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .manifesto-content h2 {
+    font-size: 1.5rem;
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+  }
+  
+  .manifesto-content strong {
+    color: var(--color-text);
+  }
+  
+  .manifesto-signature {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .manifesto-signature p {
+    margin-bottom: var(--space-xs);
+  }
+  
+  .manifesto-signature p:first-child {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.125rem;
+    color: var(--color-text);
+  }
+  
+  .manifesto-signature .mono {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+  }
+  
+  .manifesto-cta {
+    margin-top: var(--space-3xl);
+    padding: var(--space-2xl);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  
+  .manifesto-cta p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+  }
+</style>
+
