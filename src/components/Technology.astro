@@ -1,0 +1,209 @@
+---
+const methods = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>`,
+    title: 'LLM Pattern Recognition',
+    description: 'Our proprietary models identify the "perfectly average" syntax of AI. We detect the lack of soul, the statistical smoothness that humans rarely exhibit.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <path d="M14 2v6h6"/>
+      <path d="M16 13H8"/>
+      <path d="M16 17H8"/>
+      <path d="M10 9H8"/>
+    </svg>`,
+    title: 'Refined Metadata Analysis',
+    description: 'Scrutinizing the invisible digital paper trail. We analyze origin headers, post-timing anomalies, and browser fingerprints to flag inhuman speeds.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>`,
+    title: 'Elegant Stylometry',
+    description: 'Celebrating human flaw. We verify the quirks, errors, slang, and complex metaphors that defy algorithmic prediction.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>`,
+    title: 'Trusted Sources Database',
+    description: 'A curated, cryptographically secured whitelist of verified human authors, journalists, and artists. The ultimate chain of custody for truth.',
+  },
+];
+---
+
+<section id="technology" class="section technology">
+  <div class="container">
+    <div class="tech-header text-center slide-up">
+      <span class="badge badge-secondary">Detection Stack</span>
+      <h2>UNCOMMON DETECTION</h2>
+      <p>Four layers of defense working in unison to separate signal from simulation.</p>
+    </div>
+    
+    <div class="tech-grid grid grid-2 stagger-children">
+      {methods.map((method, index) => (
+        <div class="tech-card card">
+          <div class="tech-card-header">
+            <div class="tech-icon" set:html={method.icon} />
+            <span class="tech-number mono">0{index + 1}</span>
+          </div>
+          <h3 class="tech-title">{method.title}</h3>
+          <p class="tech-description">{method.description}</p>
+          <div class="tech-line"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <div class="tech-bg">
+    <div class="tech-circle" data-parallax="-0.1"></div>
+  </div>
+</section>
+
+<style>
+  .technology {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-header {
+    margin-bottom: var(--space-4xl);
+  }
+  
+  .tech-header .badge {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .tech-header h2 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .tech-header p {
+    font-size: 1.125rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .tech-grid {
+    position: relative;
+    z-index: 1;
+    gap: var(--space-lg);
+  }
+  
+  .tech-card {
+    padding: var(--space-2xl);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+  
+  .tech-card:hover::before {
+    opacity: 1;
+  }
+  
+  .tech-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .tech-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary-dim);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+  }
+  
+  .tech-number {
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
+    letter-spacing: 0.1em;
+  }
+  
+  .tech-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+  
+  .tech-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  .tech-line {
+    position: absolute;
+    bottom: 0;
+    left: var(--space-2xl);
+    right: var(--space-2xl);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+  
+  .tech-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  
+  .tech-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+  }
+  
+  .tech-circle::before,
+  .tech-circle::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+  }
+  
+  .tech-circle::before {
+    inset: 60px;
+  }
+  
+  .tech-circle::after {
+    inset: 120px;
+  }
+  
+  @media (max-width: 768px) {
+    .tech-card {
+      padding: var(--space-xl);
+    }
+  }
+</style>
+

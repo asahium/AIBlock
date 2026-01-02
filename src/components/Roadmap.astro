@@ -1,0 +1,231 @@
+---
+const phases = [
+  {
+    phase: '01',
+    title: 'Focused MVP',
+    status: 'current',
+    description: 'Browser extension overlay for Twitter & Reddit. Instantly flags probable AI comments and posts with a subtle "Synthetic" tag.',
+    features: ['Chrome Extension', 'Twitter Integration', 'Reddit Support', 'Real-time Detection'],
+  },
+  {
+    phase: '02',
+    title: 'Ghost Mode',
+    status: 'upcoming',
+    description: 'Aggressive filtering. Toggle "Ghost Mode" to vanish all AI-generated content from your feeds entirely. Silence the machines.',
+    features: ['Feed Filtering', 'Custom Thresholds', 'Blur Effects', 'User Preferences'],
+  },
+  {
+    phase: '03',
+    title: 'The Aggregator',
+    status: 'future',
+    description: 'A standalone platform. A curated "Island of Safety" news and content aggregator where every single link is human-verified.',
+    features: ['Web Platform', 'News Aggregation', 'Community Curation', 'API Access'],
+  },
+];
+---
+
+<section id="roadmap" class="section roadmap">
+  <div class="container">
+    <div class="roadmap-header text-center slide-up">
+      <span class="badge">Development Phases</span>
+      <h2>YOUR PATH TO A<br/>PRISTINE EXPERIENCE</h2>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-line" data-parallax="0.05"></div>
+      
+      {phases.map((item, index) => (
+        <div class={`timeline-item ${item.status}`} data-parallax={index % 2 === 0 ? '0.02' : '-0.02'}>
+          <div class="timeline-marker">
+            <span class="marker-dot"></span>
+            <span class="marker-ring"></span>
+          </div>
+          
+          <div class="timeline-content card slide-up">
+            <div class="timeline-header">
+              <span class="phase-number mono">Phase {item.phase}</span>
+              {item.status === 'current' && <span class="badge">In Progress</span>}
+            </div>
+            
+            <h3 class="timeline-title">{item.title}</h3>
+            <p class="timeline-description">{item.description}</p>
+            
+            <div class="timeline-features">
+              {item.features.map(feature => (
+                <span class="feature-tag">{feature}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .roadmap {
+    position: relative;
+  }
+  
+  .roadmap-header {
+    margin-bottom: var(--space-4xl);
+  }
+  
+  .roadmap-header .badge {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .roadmap-header h2 {
+    line-height: 1.1;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, 
+      transparent, 
+      var(--color-border) 10%,
+      var(--color-border) 90%,
+      transparent
+    );
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    position: relative;
+    display: flex;
+    margin-bottom: var(--space-3xl);
+  }
+  
+  .timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: calc(50% + var(--space-2xl));
+  }
+  
+  .timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: calc(50% + var(--space-2xl));
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: var(--space-xl);
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .marker-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    transition: all var(--transition-base);
+  }
+  
+  .marker-ring {
+    position: absolute;
+    inset: -6px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all var(--transition-base);
+  }
+  
+  .timeline-item.current .marker-dot {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px var(--color-primary-glow);
+  }
+  
+  .timeline-item.current .marker-ring {
+    opacity: 1;
+    transform: scale(1);
+    border-color: var(--color-primary);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    padding: var(--space-xl);
+  }
+  
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+  
+  .phase-number {
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
+    letter-spacing: 0.1em;
+  }
+  
+  .timeline-header .badge {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.625rem;
+  }
+  
+  .timeline-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .timeline-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .timeline-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .feature-tag {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--color-text-dim);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: var(--space-md);
+    }
+    
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-left: calc(var(--space-md) + var(--space-2xl));
+      padding-right: 0;
+    }
+    
+    .timeline-marker {
+      left: var(--space-md);
+    }
+  }
+</style>
+

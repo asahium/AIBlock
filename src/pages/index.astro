@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Technology from '../components/Technology.astro';
+import Roadmap from '../components/Roadmap.astro';
+import Audience from '../components/Audience.astro';
+import Pricing from '../components/Pricing.astro';
+import Reputation from '../components/Reputation.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Human-Only Filter — Reclaim Your Internet">
+  <Navigation />
+  
+  <main>
+    <Hero />
+    
+    <div class="section-divider"></div>
+    
+    <Problem />
+    
+    <Technology />
+    
+    <div class="section-divider"></div>
+    
+    <Roadmap />
+    
+    <div class="section-divider"></div>
+    
+    <Audience />
+    
+    <Pricing />
+    
+    <div class="section-divider"></div>
+    
+    <Reputation />
+    
+    <CTA />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    position: relative;
+  }
+  
+  .section-divider {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+  
+  .section-divider::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+</style>
+

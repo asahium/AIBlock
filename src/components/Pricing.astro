@@ -1,0 +1,231 @@
+---
+const plans = [
+  {
+    name: 'Personal',
+    badge: 'B2C Premium',
+    price: '$9',
+    period: '/mo',
+    description: 'Deep analysis, ad-filtering, and access to "clean" search results.',
+    features: [
+      'Browser extension',
+      'Twitter & Reddit filtering',
+      'Ghost Mode',
+      'Clean search results',
+      'Priority support',
+    ],
+    cta: 'Join Waitlist',
+    highlighted: false,
+  },
+  {
+    name: 'Publisher',
+    badge: 'Media API',
+    price: 'Custom',
+    period: '',
+    description: 'Bulk verification for publishers. Award the "Verified Human" badge.',
+    features: [
+      'Everything in Personal',
+      'API access',
+      'Bulk verification',
+      'Verified Human badge',
+      'Analytics dashboard',
+      'Dedicated support',
+    ],
+    cta: 'Contact Sales',
+    highlighted: true,
+  },
+  {
+    name: 'Enterprise',
+    badge: 'HR Solutions',
+    price: 'Contact',
+    period: '',
+    description: 'Filter AI-generated resumes and test assignments automatically.',
+    features: [
+      'Custom integration',
+      'Resume filtering',
+      'Assignment verification',
+      'Team management',
+      'SLA guarantee',
+      'White-glove onboarding',
+    ],
+    cta: 'Contact Sales',
+    highlighted: false,
+  },
+];
+---
+
+<section id="pricing" class="section pricing">
+  <div class="container">
+    <div class="pricing-header text-center slide-up">
+      <span class="badge badge-secondary">Pricing</span>
+      <h2>SUSTAINABLE AUTHENTICITY</h2>
+    </div>
+    
+    <div class="pricing-grid grid grid-3 stagger-children">
+      {plans.map(plan => (
+        <div class={`pricing-card card card-glass ${plan.highlighted ? 'pricing-highlighted' : ''}`}>
+          {plan.highlighted && <div class="popular-badge">Popular</div>}
+          
+          <div class="pricing-header-card">
+            <span class="plan-name">{plan.name}</span>
+            <span class="plan-badge mono">{plan.badge}</span>
+          </div>
+          
+          <div class="pricing-price">
+            <span class="price-value">{plan.price}</span>
+            {plan.period && <span class="price-period">{plan.period}</span>}
+          </div>
+          
+          <p class="pricing-description">{plan.description}</p>
+          
+          <ul class="pricing-features">
+            {plan.features.map(feature => (
+              <li class="pricing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <a href="#waitlist" class={`btn ${plan.highlighted ? 'btn-primary' : 'btn-outline'} pricing-cta`}>
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    position: relative;
+  }
+  
+  .pricing-header {
+    margin-bottom: var(--space-4xl);
+  }
+  
+  .pricing-header .badge {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .pricing-grid {
+    align-items: stretch;
+  }
+  
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2xl);
+    position: relative;
+  }
+  
+  .pricing-highlighted {
+    border-color: var(--color-primary);
+    background: rgba(0, 240, 255, 0.03);
+  }
+  
+  .pricing-highlighted::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--color-primary), transparent, var(--color-primary));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+  
+  .popular-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border-radius: var(--radius-sm);
+  }
+  
+  .pricing-header-card {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .plan-name {
+    display: block;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .plan-badge {
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
+    letter-spacing: 0.05em;
+  }
+  
+  .pricing-price {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .price-value {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--color-text);
+    line-height: 1;
+  }
+  
+  .price-period {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+  }
+  
+  .pricing-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    flex-grow: 0;
+  }
+  
+  .pricing-features {
+    list-style: none;
+    margin: 0 0 var(--space-xl);
+    padding: 0;
+    flex-grow: 1;
+  }
+  
+  .pricing-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .pricing-feature:last-child {
+    border-bottom: none;
+  }
+  
+  .pricing-feature svg {
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+  
+  .pricing-cta {
+    width: 100%;
+    margin-top: auto;
+  }
+</style>
+

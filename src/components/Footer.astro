@@ -1,0 +1,177 @@
+---
+const footerLinks = {
+  platform: [
+    { label: 'Extension', href: '#' },
+    { label: 'API Access', href: '#' },
+    { label: 'Reputation System', href: '#reputation' },
+    { label: 'Pricing', href: '#pricing' },
+  ],
+  company: [
+    { label: 'Manifesto', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms of Service', href: '#' },
+  ],
+};
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <span class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="16" cy="16" r="3" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="logo-text">HUMAN-ONLY</span>
+        </a>
+        <p class="footer-tagline">
+          Restoring trust in digital information. The standard for authentic human interaction.
+        </p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-list">
+            {footerLinks.platform.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-list">
+            {footerLinks.company.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright mono">
+        © 2026 Human-Only Filter. All Rights Reserved.
+      </p>
+      <p class="powered mono">
+        Built for humans, by humans.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-4xl) 0 var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.3));
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-4xl);
+    margin-bottom: var(--space-3xl);
+  }
+  
+  .footer-brand {
+    max-width: 400px;
+  }
+  
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .footer-logo .logo-icon {
+    color: var(--color-primary);
+    display: flex;
+  }
+  
+  .footer-tagline {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: var(--space-3xl);
+  }
+  
+  .footer-heading {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-list li {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .footer-list a {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+  }
+  
+  .footer-list a:hover {
+    color: var(--color-primary);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .copyright,
+  .powered {
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+    
+    .footer-links {
+      flex-wrap: wrap;
+      gap: var(--space-2xl);
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+  }
+</style>
+

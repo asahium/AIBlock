@@ -1,0 +1,146 @@
+---
+const audiences = [
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+      <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+      <path d="M2 2l7.586 7.586"/>
+      <circle cx="11" cy="11" r="2"/>
+    </svg>`,
+    title: 'Artist Communities',
+    description: 'Protect your creative spaces. Filter out generative floods that drown out authentic human expression and craft.',
+    color: 'primary',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>`,
+    title: 'Academics & Researchers',
+    description: 'Ensure citation integrity. Access verified primary sources without the risk of hallucinated data or synthetic studies.',
+    color: 'secondary',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+      <path d="M12 6v6l4 2"/>
+    </svg>`,
+    title: 'Techno-Pessimists',
+    description: 'Find sanctuary. A digital space that respects the pace of human thought, free from the hyper-optimized noise of algorithms.',
+    color: 'primary',
+  },
+];
+---
+
+<section id="audience" class="section audience">
+  <div class="container">
+    <div class="audience-header text-center slide-up">
+      <h2>FOR THOSE WHO DEMAND<br/><span class="text-gradient">GENUINE CONNECTION</span></h2>
+      <p>The future isn't about more content. It's about better sources.</p>
+    </div>
+    
+    <div class="audience-grid grid grid-3 stagger-children">
+      {audiences.map(audience => (
+        <div class={`audience-card card card-glass audience-${audience.color}`}>
+          <div class="audience-icon" set:html={audience.icon} />
+          <h3 class="audience-title">{audience.title}</h3>
+          <p class="audience-description">{audience.description}</p>
+          <div class="audience-glow"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience {
+    position: relative;
+  }
+  
+  .audience-header {
+    margin-bottom: var(--space-4xl);
+  }
+  
+  .audience-header h2 {
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+  
+  .audience-header p {
+    font-size: 1.125rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .audience-card {
+    position: relative;
+    padding: var(--space-2xl);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .audience-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-base);
+  }
+  
+  .audience-card:hover .audience-icon {
+    transform: scale(1.1);
+  }
+  
+  .audience-primary .audience-icon {
+    background: var(--color-primary-dim);
+    color: var(--color-primary);
+  }
+  
+  .audience-secondary .audience-icon {
+    background: var(--color-secondary-dim);
+    color: var(--color-secondary);
+  }
+  
+  .audience-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+  
+  .audience-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  .audience-glow {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    pointer-events: none;
+  }
+  
+  .audience-primary .audience-glow {
+    background: radial-gradient(circle, var(--color-primary-dim), transparent);
+  }
+  
+  .audience-secondary .audience-glow {
+    background: radial-gradient(circle, var(--color-secondary-dim), transparent);
+  }
+  
+  .audience-card:hover .audience-glow {
+    opacity: 0.5;
+  }
+</style>
+

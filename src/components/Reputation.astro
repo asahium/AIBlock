@@ -1,0 +1,256 @@
+---
+---
+
+<section id="reputation" class="section reputation">
+  <div class="container">
+    <div class="reputation-grid">
+      <div class="reputation-content slide-up">
+        <span class="badge">Adaptive Defense</span>
+        <h2>BEYOND DETECTION:<br/><span class="text-gradient">THE REPUTATION SYSTEM</span></h2>
+        <p class="reputation-description">
+          AI detection is an arms race. Models improve, detection lags. 
+          We solve this with a robust, adaptive reputation system.
+        </p>
+        <p class="reputation-description">
+          Our network flags suspicious bot swarms in real-time, building a global 
+          "Web of Trust" that evolves faster than the algorithms trying to trick it.
+        </p>
+        
+        <div class="reputation-status">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-label mono">Live</span>
+          </div>
+          <span class="status-text">Threat Monitoring</span>
+        </div>
+      </div>
+      
+      <div class="reputation-visual slide-up">
+        <div class="web-of-trust">
+          <div class="trust-ring trust-ring-1">
+            <div class="trust-node node-1"></div>
+            <div class="trust-node node-2"></div>
+            <div class="trust-node node-3"></div>
+          </div>
+          <div class="trust-ring trust-ring-2">
+            <div class="trust-node node-4"></div>
+            <div class="trust-node node-5"></div>
+            <div class="trust-node node-6"></div>
+            <div class="trust-node node-7"></div>
+          </div>
+          <div class="trust-ring trust-ring-3">
+            <div class="trust-node node-8"></div>
+            <div class="trust-node node-9"></div>
+            <div class="trust-node node-10"></div>
+            <div class="trust-node node-11"></div>
+            <div class="trust-node node-12"></div>
+          </div>
+          <div class="trust-core">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          
+          <svg class="trust-connections" viewBox="0 0 300 300">
+            <line x1="150" y1="150" x2="150" y2="80" class="connection"/>
+            <line x1="150" y1="150" x2="210" y2="115" class="connection"/>
+            <line x1="150" y1="150" x2="210" y2="185" class="connection"/>
+            <line x1="150" y1="150" x2="150" y2="220" class="connection"/>
+            <line x1="150" y1="150" x2="90" y2="185" class="connection"/>
+            <line x1="150" y1="150" x2="90" y2="115" class="connection"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reputation {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .reputation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+  
+  .reputation-content .badge {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .reputation-content h2 {
+    margin-bottom: var(--space-xl);
+    line-height: 1.1;
+  }
+  
+  .reputation-description {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .reputation-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    width: fit-content;
+  }
+  
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 10px #00ff88;
+  }
+  
+  .status-label {
+    font-size: 0.75rem;
+    color: #00ff88;
+    letter-spacing: 0.1em;
+  }
+  
+  .status-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    padding-left: var(--space-md);
+    border-left: 1px solid var(--color-border);
+  }
+  
+  .reputation-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .web-of-trust {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .trust-ring {
+    position: absolute;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .trust-ring-1 {
+    width: 100px;
+    height: 100px;
+    animation: rotate 20s linear infinite;
+  }
+  
+  .trust-ring-2 {
+    width: 180px;
+    height: 180px;
+    animation: rotate 30s linear infinite reverse;
+  }
+  
+  .trust-ring-3 {
+    width: 260px;
+    height: 260px;
+    animation: rotate 40s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  .trust-node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-primary-glow);
+  }
+  
+  .trust-ring-1 .trust-node:nth-child(1) { top: -5px; left: 50%; transform: translateX(-50%); }
+  .trust-ring-1 .trust-node:nth-child(2) { bottom: 20%; right: -5px; }
+  .trust-ring-1 .trust-node:nth-child(3) { bottom: 20%; left: -5px; }
+  
+  .trust-ring-2 .trust-node:nth-child(1) { top: -5px; left: 50%; transform: translateX(-50%); }
+  .trust-ring-2 .trust-node:nth-child(2) { top: 20%; right: -5px; }
+  .trust-ring-2 .trust-node:nth-child(3) { bottom: 20%; right: -5px; }
+  .trust-ring-2 .trust-node:nth-child(4) { bottom: -5px; left: 50%; transform: translateX(-50%); }
+  
+  .trust-ring-3 .trust-node { width: 8px; height: 8px; background: var(--color-secondary); box-shadow: 0 0 10px rgba(255, 165, 0, 0.4); }
+  .trust-ring-3 .trust-node:nth-child(1) { top: -4px; left: 50%; transform: translateX(-50%); }
+  .trust-ring-3 .trust-node:nth-child(2) { top: 15%; right: 10%; }
+  .trust-ring-3 .trust-node:nth-child(3) { top: 50%; right: -4px; }
+  .trust-ring-3 .trust-node:nth-child(4) { bottom: 15%; right: 10%; }
+  .trust-ring-3 .trust-node:nth-child(5) { bottom: -4px; left: 50%; transform: translateX(-50%); }
+  
+  .trust-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-primary);
+    z-index: 2;
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .trust-connections {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+  }
+  
+  .connection {
+    stroke: var(--color-primary);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+    animation: dash 2s linear infinite;
+  }
+  
+  @keyframes dash {
+    to { stroke-dashoffset: -16; }
+  }
+  
+  @media (max-width: 768px) {
+    .reputation-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+    
+    .reputation-visual {
+      order: -1;
+    }
+    
+    .web-of-trust {
+      width: 250px;
+      height: 250px;
+    }
+  }
+</style>
+

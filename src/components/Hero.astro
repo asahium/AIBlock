@@ -1,0 +1,269 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-particles">
+      <div class="particle" data-parallax="-0.2"></div>
+      <div class="particle" data-parallax="-0.3"></div>
+      <div class="particle" data-parallax="-0.15"></div>
+      <div class="particle" data-parallax="-0.25"></div>
+      <div class="particle" data-parallax="-0.1"></div>
+    </div>
+    <div class="hero-shapes">
+      <div class="shape shape-1" data-parallax="-0.1"></div>
+      <div class="shape shape-2" data-parallax="-0.2"></div>
+      <div class="shape shape-3" data-parallax="-0.15"></div>
+    </div>
+  </div>
+  
+  <div class="container hero-content">
+    <div class="hero-badge fade-in">
+      <span class="badge">
+        <span class="pulse-dot"></span>
+        Beta Access Live
+      </span>
+    </div>
+    
+    <h1 class="hero-title slide-up">
+      <span class="hero-title-line">RECLAIM YOUR</span>
+      <span class="hero-title-line text-gradient">INTERNET</span>
+    </h1>
+    
+    <p class="hero-subtitle slide-up">
+      In a world saturated by AI, genuine human content is the new luxury. 
+      We bring it back.
+    </p>
+    
+    <div class="hero-actions slide-up">
+      <a href="#waitlist" class="btn btn-primary">
+        Join the Waitlist
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="#technology" class="btn btn-outline">
+        Discover How
+      </a>
+    </div>
+    
+    <div class="hero-figure slide-up">
+      <span class="mono text-muted">Figure 01: The Human Signal</span>
+    </div>
+  </div>
+  
+  <div class="hero-scroll">
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: var(--space-5xl) 0 var(--space-3xl);
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 100% 100% at 50% 0%, var(--color-primary-dim) 0%, transparent 60%);
+    opacity: 0.5;
+  }
+  
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    opacity: 0.3;
+  }
+  
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+  .particle:nth-child(2) { top: 60%; left: 85%; animation-delay: 1s; }
+  .particle:nth-child(3) { top: 80%; left: 20%; animation-delay: 2s; }
+  .particle:nth-child(4) { top: 30%; left: 75%; animation-delay: 3s; }
+  .particle:nth-child(5) { top: 70%; left: 50%; animation-delay: 4s; }
+  
+  .hero-shapes {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .shape {
+    position: absolute;
+    border: 1px solid var(--color-border);
+    opacity: 0.4;
+  }
+  
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: 5%;
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .shape-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 10%;
+    transform: rotate(45deg);
+    animation: float 10s ease-in-out infinite reverse;
+  }
+  
+  .shape-3 {
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    left: 20%;
+    border-radius: 50%;
+    border-color: var(--color-primary);
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+  
+  .hero-badge .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 12vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0;
+  }
+  
+  .hero-title-line {
+    display: block;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    max-width: 500px;
+    color: var(--color-text-muted);
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+  
+  .hero-figure {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .hero-scroll {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .scroll-indicator {
+    width: 24px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+  }
+  
+  .scroll-line {
+    width: 2px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.3; }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-4xl) 0 var(--space-2xl);
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .hero-actions .btn {
+      width: 100%;
+    }
+    
+    .shape-1 {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .shape-2 {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
+
