@@ -22,7 +22,26 @@ const { title, description = "In a world saturated by AI, genuine human content 
   </head>
   <body>
     <slot />
+    <script is:inline>
+      // Theme toggle - runs immediately to prevent flash
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
     <script>
+      // Theme toggle handler
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      themeToggle?.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      });
+      
       // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
