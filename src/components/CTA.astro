@@ -9,15 +9,19 @@ const base = import.meta.env.BASE_URL;
         <h2>JOIN THE MOVEMENT</h2>
         <p>The internet is broken. Help us fix it.</p>
         
-        <form class="cta-form" action="#" method="POST">
+        <form class="cta-form" action="#" method="POST" novalidate id="waitlist-form">
           <div class="form-group">
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Enter your email" 
-              required 
-              class="form-input"
-            />
+            <div class="input-wrapper">
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Enter your email" 
+                required 
+                class="form-input"
+                id="email-input"
+              />
+              <span class="form-error" id="email-error">Please enter a valid email</span>
+            </div>
             <button type="submit" class="btn btn-primary">
               Sign Up for Early Access
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -27,6 +31,28 @@ const base = import.meta.env.BASE_URL;
           </div>
           <p class="form-note mono">* Limited spots available for Beta Cohort 1</p>
         </form>
+        
+        <script>
+          const form = document.getElementById('waitlist-form');
+          const emailInput = document.getElementById('email-input');
+          const emailError = document.getElementById('email-error');
+          
+          form?.addEventListener('submit', (e) => {
+            const email = emailInput?.value.trim();
+            const isValid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            
+            if (!isValid) {
+              e.preventDefault();
+              emailInput?.classList.add('invalid');
+              emailError?.classList.add('visible');
+            }
+          });
+          
+          emailInput?.addEventListener('input', () => {
+            emailInput.classList.remove('invalid');
+            emailError?.classList.remove('visible');
+          });
+        </script>
         
         <div class="cta-actions">
           <a href="#" class="btn btn-outline">
@@ -113,6 +139,42 @@ const base = import.meta.env.BASE_URL;
   .form-input:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px var(--color-primary-dim);
+  }
+  
+  .form-input.invalid {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  }
+  
+  .input-wrapper {
+    flex: 1;
+    position: relative;
+  }
+  
+  .input-wrapper .form-input {
+    width: 100%;
+  }
+  
+  .form-error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: #ff6b6b;
+    background: var(--color-bg-elevated);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+  }
+  
+  .form-error.visible {
+    opacity: 1;
+    visibility: visible;
   }
   
   .form-group .btn {
