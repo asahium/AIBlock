@@ -452,12 +452,8 @@ a:hover {
   transition: opacity var(--transition-fast), transform var(--transition-base);
 }
 
-:root.light .theme-toggle .icon-sun {
-  transform: rotate(180deg);
-}
-
-:root:not(.light) .theme-toggle .icon-moon {
-  transform: rotate(-180deg);
+.theme-toggle .icon-moon {
+  transform: rotate(40deg);
 }
 
 /* Focus styles */
