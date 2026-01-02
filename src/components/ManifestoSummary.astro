@@ -33,14 +33,19 @@ const base = import.meta.env.BASE_URL;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .manifesto-card .badge {
+    display: inline-block;
     margin-bottom: var(--space-xl);
   }
   
   blockquote {
-    margin: 0 0 var(--space-xl);
+    margin: 0 auto var(--space-xl);
+    max-width: 700px;
   }
   
   blockquote p {
