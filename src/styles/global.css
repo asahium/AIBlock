@@ -331,35 +331,25 @@ a:hover {
 }
 
 /* Scroll-triggered animation classes */
-.fade-in,
-.slide-up,
-.scale-in {
-  opacity: 0;
-}
-
-.fade-in.visible {
+.fade-in {
   animation: fadeIn var(--transition-slower) forwards;
 }
 
-.slide-up.visible {
+.slide-up {
   animation: slideUp var(--transition-slower) forwards;
 }
 
-.scale-in.visible {
+.scale-in {
   animation: scaleIn var(--transition-slower) forwards;
 }
 
 /* Stagger children */
-.stagger-children > * {
-  opacity: 0;
-}
-
-.stagger-children.visible > *:nth-child(1) { animation: slideUp var(--transition-slower) 0ms forwards; }
-.stagger-children.visible > *:nth-child(2) { animation: slideUp var(--transition-slower) 100ms forwards; }
-.stagger-children.visible > *:nth-child(3) { animation: slideUp var(--transition-slower) 200ms forwards; }
-.stagger-children.visible > *:nth-child(4) { animation: slideUp var(--transition-slower) 300ms forwards; }
-.stagger-children.visible > *:nth-child(5) { animation: slideUp var(--transition-slower) 400ms forwards; }
-.stagger-children.visible > *:nth-child(6) { animation: slideUp var(--transition-slower) 500ms forwards; }
+.stagger-children > *:nth-child(1) { animation: slideUp var(--transition-slower) 0ms forwards; }
+.stagger-children > *:nth-child(2) { animation: slideUp var(--transition-slower) 100ms forwards; }
+.stagger-children > *:nth-child(3) { animation: slideUp var(--transition-slower) 200ms forwards; }
+.stagger-children > *:nth-child(4) { animation: slideUp var(--transition-slower) 300ms forwards; }
+.stagger-children > *:nth-child(5) { animation: slideUp var(--transition-slower) 400ms forwards; }
+.stagger-children > *:nth-child(6) { animation: slideUp var(--transition-slower) 500ms forwards; }
 
 /* Parallax wrapper */
 .parallax-wrapper {
