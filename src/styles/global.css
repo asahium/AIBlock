@@ -27,31 +27,6 @@
   /* Theme indicator */
   --theme-icon-sun: 0;
   --theme-icon-moon: 1;
-}
-
-/* Light Theme */
-:root.light {
-  --color-bg: #f8f9fa;
-  --color-bg-elevated: #ffffff;
-  --color-bg-card: rgba(0, 0, 0, 0.02);
-  --color-bg-card-hover: rgba(0, 0, 0, 0.05);
-  
-  --color-primary: #0891b2;
-  --color-primary-dim: rgba(8, 145, 178, 0.12);
-  --color-primary-glow: rgba(8, 145, 178, 0.3);
-  
-  --color-secondary: #d97706;
-  --color-secondary-dim: rgba(217, 119, 6, 0.12);
-  
-  --color-text: #1a1a1b;
-  --color-text-muted: #64748b;
-  --color-text-dim: #94a3b8;
-  
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-hover: rgba(0, 0, 0, 0.15);
-  
-  --theme-icon-sun: 1;
-  --theme-icon-moon: 0;
   
   /* Typography */
   --font-serif: 'Instrument Serif', Georgia, serif;
@@ -89,6 +64,31 @@
   /* Container */
   --container-max: 1200px;
   --container-padding: 1.5rem;
+}
+
+/* Light Theme */
+:root.light {
+  --color-bg: #f8f9fa;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: rgba(0, 0, 0, 0.02);
+  --color-bg-card-hover: rgba(0, 0, 0, 0.05);
+  
+  --color-primary: #0891b2;
+  --color-primary-dim: rgba(8, 145, 178, 0.12);
+  --color-primary-glow: rgba(8, 145, 178, 0.3);
+  
+  --color-secondary: #d97706;
+  --color-secondary-dim: rgba(217, 119, 6, 0.12);
+  
+  --color-text: #1a1a1b;
+  --color-text-muted: #64748b;
+  --color-text-dim: #94a3b8;
+  
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.15);
+  
+  --theme-icon-sun: 1;
+  --theme-icon-moon: 0;
 }
 
 /* Reset & Base */
